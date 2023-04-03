@@ -8,7 +8,7 @@ using namespace ariel;
 TEST_CASE("Deck initiated correctly") {
     Deck d;
     d.init();
-    CHECK(d.cardsLeft() == 52);
+    CHECK(d.size() == 52);
 }
 
 TEST_CASE("Check each SUIT has 13 cards") {
@@ -116,17 +116,17 @@ TEST_CASE("Check shuffle") {
 TEST_CASE("Check pop"){
     Deck d;
     d.init();
-    CHECK(d.cardsLeft()==52);
+    CHECK(d.size()==52);
     d.pop();
-    CHECK(d.cardsLeft()==51);
+    CHECK(d.size()==51);
     d.pop();
-    CHECK(d.cardsLeft()==50);
+    CHECK(d.size()==50);
     d.pop();
-    CHECK(d.cardsLeft()==49);
+    CHECK(d.size()==49);
     d.pop();
-    CHECK(d.cardsLeft()==48);
+    CHECK(d.size()==48);
     d.pop();
-    CHECK(d.cardsLeft()==47);
+    CHECK(d.size()==47);
     d.pop();
-    CHECK(d.cardsLeft()==46);
+    CHECK(d.size()==46);
 }

@@ -30,7 +30,7 @@ namespace ariel {
         return temp;
     }
 
-    int Deck::cardsLeft() { return this->vec.size(); }
+    int Deck::size() { return this->vec.size(); }
 
     string Deck::toString() {
         string st = "Deck:\n{";

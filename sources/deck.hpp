@@ -35,7 +35,7 @@ namespace ariel {
 /**
  * @return The number of cards left in the deck.
  */
-        int cardsLeft();
+        int size();
 
         string toString();
 
