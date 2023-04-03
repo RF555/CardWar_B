@@ -18,5 +18,10 @@ TEST_CASE("Function 'setCard' works") {
     c1.setCard(SPADE, 3);
     CHECK(c1.getRank() == THREE);
     CHECK(c1.getSuit() == SPADE);
-
+    c1.setCard(SPADE, -2);
+    CHECK(c1.getRank() == RANK_UNDEFINED);
+    CHECK(c1.getSuit() == SPADE);
+    c1.setCard(SPADE, 15);
+    CHECK(c1.getRank() == RANK_UNDEFINED);
+    CHECK(c1.getSuit() == SPADE);
 }
