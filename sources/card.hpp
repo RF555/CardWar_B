@@ -28,10 +28,7 @@ namespace ariel {
 
     public:
 
-        Card() {
-            this->_rank = RANK_UNDEFINED;
-            this->_suit = SUIT_UNDEFINED;
-        }
+        Card();
 
         Card(SUIT s, RANK rank);
 
@@ -42,6 +39,8 @@ namespace ariel {
         void setCard(SUIT s, RANK rank);
 
         void setCard(SUIT s, int rank);
+
+        string toString();
 
     };
 }
