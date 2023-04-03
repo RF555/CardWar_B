@@ -91,3 +91,22 @@ TEST_CASE("Check each RANK has 4 cards") {
     CHECK(_QUEEN == 4);
     CHECK(_KING == 4);
 }
+
+TEST_CASE("Check shuffle") {
+    Deck d;
+    string st1 = d.toString();
+    d.shuffle();
+    string st2 = d.toString();
+    CHECK(st1 != st2);
+    d.shuffle();
+    string st3 = d.toString();
+    CHECK(st1 != st3);
+    CHECK(st3 != st2);
+    d.shuffle();
+    string st4 = d.toString();
+    CHECK(st4 != st2);
+    CHECK(st1 != st4);
+    CHECK(st4 != st3);
+
+
+}
