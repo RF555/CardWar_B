@@ -12,8 +12,6 @@ namespace ariel {
 
         Deck();
 
-//        ~Deck();
-
 /**
 * @brief Shuffle the deck using std::shuffle.
 */

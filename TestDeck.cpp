@@ -107,6 +107,21 @@ TEST_CASE("Check shuffle") {
     CHECK(st4 != st2);
     CHECK(st1 != st4);
     CHECK(st4 != st3);
+}
 
-
+TEST_CASE("Check pop"){
+    Deck d;
+    CHECK(d.cardsLeft()==52);
+    d.pop();
+    CHECK(d.cardsLeft()==51);
+    d.pop();
+    CHECK(d.cardsLeft()==50);
+    d.pop();
+    CHECK(d.cardsLeft()==49);
+    d.pop();
+    CHECK(d.cardsLeft()==48);
+    d.pop();
+    CHECK(d.cardsLeft()==47);
+    d.pop();
+    CHECK(d.cardsLeft()==46);
 }
