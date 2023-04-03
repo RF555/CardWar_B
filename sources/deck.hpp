@@ -1,24 +1,31 @@
 #include <iostream>
+#include <vector>
 #include "card.hpp"
 
 using namespace std;
 namespace ariel {
 
     class Deck {
+
     public:
-        Card *d;
+        vector <Card> vec;
 
         Deck();
 
-        ~Deck();
+//        ~Deck();
 
 /**
-* @brief Shuffle the array using Fisher–Yates shuffle Algorithm.
+* @brief Shuffle the deck using std::shuffle.
 */
         void shuffle();
 
+        Card pop();
+
+        int cardsLeft();
+
+        string toString();
+
     private:
         void swap(Card &_a, Card &_b);
-
     };
 }
