@@ -6,7 +6,10 @@ namespace ariel {
 
     Player::Player(string _name) { this->name = _name; }
 
-    int Player::stacksize() { return 0; }
+    int Player::stacksize() { return this->game_deck->size(); }
 
-    int Player::cardesTaken() { return 0; }
+    int Player::cardesTaken() { return this->cards_won.size(); }
+
+    void Player::setGameDeck(Deck *_deck) { this->game_deck = _deck; }
+
 }

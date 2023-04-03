@@ -2,7 +2,7 @@
 #define PLAYER_HPP
 
 #include <iostream>
-//#include "card.hpp"
+#include "deck.hpp"
 
 using namespace std;
 namespace ariel {
@@ -10,24 +10,27 @@ namespace ariel {
     class Player {
     public:
         string name;
-//    Card deck;
+        Deck cards_won;
+        Deck *game_deck;
 
         Player();
 
         Player(string _name);
 
-//        ~Player() {}
+/**
+ * Point game_deck to the actual game's deck.
+ * @param _deck Pointer of the game's deck.
+ */
+        void setGameDeck(Deck *_deck);
 
 /**
- * @return The amount of cards left in the to play.
+ * @return The amount of cards left to play.
 */
-//        int stacksize() { return 0; }
         int stacksize();
 
 /**
  * @return The amount of cards this player has won.
  */
-//        int cardesTaken() { return 0; }
         int cardesTaken();
 
     };
