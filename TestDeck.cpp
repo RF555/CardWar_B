@@ -7,11 +7,13 @@ using namespace ariel;
 
 TEST_CASE("Deck initiated correctly") {
     Deck d;
+    d.init();
     CHECK(d.cardsLeft() == 52);
 }
 
 TEST_CASE("Check each SUIT has 13 cards") {
     Deck d;
+    d.init();
     int _HEART = 0;
     int _SPADE = 0;
     int _DIAMOND = 0;
@@ -35,6 +37,7 @@ TEST_CASE("Check each SUIT has 13 cards") {
 
 TEST_CASE("Check each RANK has 4 cards") {
     Deck d;
+    d.init();
     int _ACE = 0;
     int _TWO = 0;
     int _THREE = 0;
@@ -94,6 +97,7 @@ TEST_CASE("Check each RANK has 4 cards") {
 
 TEST_CASE("Check shuffle") {
     Deck d;
+    d.init();
     string st1 = d.toString();
     d.shuffle();
     string st2 = d.toString();
@@ -111,6 +115,7 @@ TEST_CASE("Check shuffle") {
 
 TEST_CASE("Check pop"){
     Deck d;
+    d.init();
     CHECK(d.cardsLeft()==52);
     d.pop();
     CHECK(d.cardsLeft()==51);

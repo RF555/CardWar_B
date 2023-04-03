@@ -10,12 +10,16 @@ namespace ariel {
     public:
         vector <Card> vec;
 
-        Deck();
+        Deck(){}
+
+        void init();
 
 /**
 * @brief Shuffle the deck using std::shuffle.
 */
         void shuffle();
+
+        void push(Card _card);
 
         Card pop();
 

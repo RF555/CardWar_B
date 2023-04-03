@@ -5,18 +5,20 @@
 
 namespace ariel {
 
-    Deck::Deck() {
+    void Deck::push(ariel::Card _card) { this->vec.push_back(_card); }
+
+    void Deck::init() {
         for (int i = 0; i < 13; ++i) {
-            this->vec.push_back(Card(HEART, i + 1));
+            this->push(Card(HEART, i + 1));
         }
         for (int i = 0; i < 13; ++i) {
-            this->vec.push_back(Card(DIAMOND, i + 1));
+            this->push(Card(DIAMOND, i + 1));
         }
         for (int i = 0; i < 13; ++i) {
-            this->vec.push_back(Card(SPADE, i + 1));
+            this->push(Card(SPADE, i + 1));
         }
         for (int i = 0; i < 13; ++i) {
-            this->vec.push_back(Card(CLUB, i + 1));
+            this->push(Card(CLUB, i + 1));
         }
     }
 
