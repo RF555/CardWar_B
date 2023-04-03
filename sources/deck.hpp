@@ -10,8 +10,11 @@ namespace ariel {
     public:
         vector <Card> vec;
 
-        Deck(){}
+        Deck() {}
 
+/**
+ * @brief Initiate a full deck of cards.
+ */
         void init();
 
 /**
@@ -19,15 +22,22 @@ namespace ariel {
 */
         void shuffle();
 
+/**
+ * @brief Add a new Card to the Deck.
+ */
         void push(Card _card);
 
+/**
+ * @return Pop and return the first card.
+ */
         Card pop();
 
+/**
+ * @return The number of cards left in the deck.
+ */
         int cardsLeft();
 
         string toString();
 
-    private:
-        void swap(Card &_a, Card &_b);
     };
 }

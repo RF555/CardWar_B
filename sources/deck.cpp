@@ -1,4 +1,3 @@
-#include <time.h>
 #include <algorithm>
 #include <random>
 #include "../sources/deck.hpp"
@@ -8,6 +7,9 @@ namespace ariel {
     void Deck::push(ariel::Card _card) { this->vec.push_back(_card); }
 
     void Deck::init() {
+        if (!this->vec.empty()) {
+            this->vec.clear();
+        }
         for (int i = 0; i < 13; ++i) {
             this->push(Card(HEART, i + 1));
         }
@@ -38,15 +40,7 @@ namespace ariel {
                 st = st + ", ";
             }
         }
-
         return st;
-    }
-
-
-    void Deck::swap(Card &_a, Card &_b) {
-        Card temp = _a;
-        _a = _b;
-        _b = temp;
     }
 
     void Deck::shuffle() {
