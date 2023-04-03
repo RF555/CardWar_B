@@ -10,6 +10,15 @@ namespace ariel {
         this->_suit = s;
         this->_rank = rank;
     }
+    Card::Card(ariel::SUIT s, int rank) {
+        this->_suit = s;
+        if (rank >= 1 && rank <= 13) {
+            this->_rank = static_cast<RANK>(rank);
+        } else {
+            cout << "ERROR! This rank is undefined!\n";
+            this->_rank = RANK_UNDEFINED;
+        }
+    }
 
     SUIT Card::getSuit() { return this->_suit; }
 

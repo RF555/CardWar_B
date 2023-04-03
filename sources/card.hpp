@@ -32,6 +32,8 @@ namespace ariel {
 
         Card(SUIT s, RANK rank);
 
+        Card(SUIT s, int rank);
+
         SUIT getSuit();
 
         int getRank();
