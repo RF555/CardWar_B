@@ -52,7 +52,7 @@ namespace ariel {
         /**
          * @return True if deck is empty.
          */
-        bool empty();
+        bool isEmpty();
 
     };
 }

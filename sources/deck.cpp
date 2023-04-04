@@ -56,7 +56,7 @@ namespace ariel {
         std::shuffle(begin(this->vec), end(this->vec), rng);
     }
 
-    bool Deck::empty() { return this->vec.empty(); }
+    bool Deck::isEmpty() { return this->vec.empty(); }
 
     bool Deck::cardExists(ariel::Card c) {
         for (auto &card: this->vec) {
