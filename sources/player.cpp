@@ -18,6 +18,10 @@ namespace ariel {
         }
     }
 
+    bool Player::pushMyDeck(ariel::Card c) {
+        return this->my_deck.push(c);
+    }
+
     string Player::getName() { return this->name; }
 
     Deck &Player::getCardsWon() { return this->cards_won; }
