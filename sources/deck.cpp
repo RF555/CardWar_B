@@ -47,4 +47,6 @@ namespace ariel {
         auto rng = std::default_random_engine{};
         std::shuffle(begin(this->vec), end(this->vec), rng);
     }
+
+    bool Deck::empty() { return this->vec.empty(); }
 }

@@ -7,7 +7,9 @@ using namespace ariel;
 
 TEST_CASE("Deck initiated correctly") {
     Deck d;
+    CHECK(d.empty());
     d.init();
+    CHECK(!d.empty());
     CHECK(d.size() == 52);
 }
 
@@ -113,20 +115,20 @@ TEST_CASE("Check shuffle") {
     CHECK(st4 != st3);
 }
 
-TEST_CASE("Check pop"){
+TEST_CASE("Check pop") {
     Deck d;
     d.init();
-    CHECK(d.size()==52);
+    CHECK(d.size() == 52);
     d.pop();
-    CHECK(d.size()==51);
+    CHECK(d.size() == 51);
     d.pop();
-    CHECK(d.size()==50);
+    CHECK(d.size() == 50);
     d.pop();
-    CHECK(d.size()==49);
+    CHECK(d.size() == 49);
     d.pop();
-    CHECK(d.size()==48);
+    CHECK(d.size() == 48);
     d.pop();
-    CHECK(d.size()==47);
+    CHECK(d.size() == 47);
     d.pop();
-    CHECK(d.size()==46);
+    CHECK(d.size() == 46);
 }

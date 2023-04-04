@@ -42,6 +42,11 @@ namespace ariel {
 
         string toString();
 
+/**
+ * @return True if deck is empty.
+ */
+        bool empty();
+
     };
 }
 #endif
