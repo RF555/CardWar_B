@@ -18,7 +18,7 @@ namespace ariel {
         }
     }
 
-    bool Player::pushMyDeck(ariel::Card c) {
+    bool Player::pushMyDeck(Card &c) {
         return this->my_deck.push(c);
     }
 

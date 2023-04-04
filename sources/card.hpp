@@ -55,8 +55,11 @@ namespace ariel {
          */
         bool equal(Card c);
 
+        Card copy();
+
     private:
         string suitString();
+
         string rankString();
 
     };

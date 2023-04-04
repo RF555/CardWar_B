@@ -44,6 +44,11 @@ namespace ariel {
         return (this->_rank == c.getRank()) && (this->_suit == c.getSuit());
     }
 
+    Card Card::copy() {
+        Card c(this->getSuit(), this->_rank);
+        return c;
+    }
+
     string Card::toStringCol() {
         if (this->_suit == HEART) {
             return "\e[31m\u2665" + to_string(this->_rank) + "\e[0m\n";

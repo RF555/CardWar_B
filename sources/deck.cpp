@@ -58,12 +58,16 @@ namespace ariel {
 
     bool Deck::isEmpty() { return this->vec.empty(); }
 
-    bool Deck::cardExists(ariel::Card c) {
+    bool Deck::cardExists(Card c) {
         for (auto &card: this->vec) {
             if (card.equal(c)) {
                 return true;
             }
         }
         return false;
+    }
+
+    Card Deck::peek() {
+        return this->vec.back();
     }
 }

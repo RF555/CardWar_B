@@ -29,6 +29,9 @@ test_deck: TestRunner.o TestDeck.o  $(OBJECTS)
 test_player: TestRunner.o TestPlayer.o  $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
+test_game: TestRunner.o TestGame.o  $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
 tidy:
 	clang-tidy $(HEADERS) $(TIDY_FLAGS) --
 

@@ -45,7 +45,7 @@ namespace ariel {
          */
         void addWonCards(Deck &round_cards);
 
-        bool pushMyDeck(Card c);
+        bool pushMyDeck(Card &c);
 
     private:
         string name;

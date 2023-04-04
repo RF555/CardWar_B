@@ -2,17 +2,21 @@
 #define GAME_HPP
 
 #include <iostream>
+#include <vector>
 #include "../sources/player.hpp"
+#include "../sources/round.hpp"
 
 namespace ariel {
 
     class Game {
-    public:
+
         Player p1, p2;
+        Deck game_deck;
+        vector <string> rounds;
+
+    public:
 
         Game(Player _p1, Player _p2);
-
-//        ~Game();
 
         /**
         * @brief Simulate a turn in the game.
@@ -45,6 +49,18 @@ namespace ariel {
         * (draw within a draw counts as 2 draws. ).
         */
         void printStats();
+
+    private:
+
+        /**
+         * @return A card from p1's deck.
+         */
+        Card popP1();
+
+        /**
+         * @return A card from p2's deck.
+         */
+        Card popP2();
 
     };
 }
