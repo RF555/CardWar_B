@@ -47,11 +47,17 @@ namespace ariel {
 
         string toString();
 
+        string toStringCol();
+
         /**
          * @param c A Card instance.
          * @return True if the cards are equal.
          */
         bool equal(Card c);
+
+    private:
+        string suitString();
+        string rankString();
 
     };
 }

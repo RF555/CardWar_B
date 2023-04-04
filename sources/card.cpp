@@ -40,7 +40,11 @@ namespace ariel {
         }
     }
 
-    string Card::toString() {
+    bool Card::equal(Card c) {
+        return (this->_rank == c.getRank()) && (this->_suit == c.getSuit());
+    }
+
+    string Card::toStringCol() {
         if (this->_suit == HEART) {
             return "\e[31m\u2665" + to_string(this->_rank) + "\e[0m\n";
         } else if (this->_suit == DIAMOND) {
@@ -54,8 +58,56 @@ namespace ariel {
         }
     }
 
-    bool Card::equal(Card c) {
-        return (this->_rank == c.getRank()) && (this->_suit == c.getSuit());
+    string Card::suitString() {
+        switch (this->getSuit()) {
+            case HEART:
+                return "Hearts";
+            case DIAMOND:
+                return "Diamonds";
+            case CLUB:
+                return "Clubs";
+            case SPADE:
+                return "Spades";
+            case SUIT_UNDEFINED:
+                return "SUIT_UNDEFINED";
+        }
+    }
+
+    string Card::rankString() {
+        switch (this->_rank()) {
+            case ACE:
+                return "Ace";
+            case TWO:
+                return "2";
+            case THREE:
+                return "3";
+            case FOUR:
+                return "4";
+            case FIVE:
+                return "5";
+            case SIX:
+                return "6";
+            case SEVEN:
+                return "7";
+            case EIGHT:
+                return "8";
+            case NINE:
+                return "9";
+            case TEN:
+                return "10";
+            case JACK:
+                return "Jack";
+            case QUEEN:
+                return "Queen";
+            case KING:
+                return "King";
+            case RANK_UNDEFINED:
+                return "RANK_UNDEFINED";
+        }
+    }
+
+    string Card::toString() {
+        return rankString() + " of " + suitString();
     }
 
 }
