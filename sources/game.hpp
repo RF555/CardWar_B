@@ -1,3 +1,6 @@
+#ifndef GAME_HPP
+#define GAME_HPP
+
 #include <iostream>
 #include "../sources/player.hpp"
 
@@ -46,3 +49,4 @@ namespace ariel {
 
     };
 }
+#endif
