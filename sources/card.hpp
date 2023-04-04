@@ -33,19 +33,25 @@ namespace ariel {
 
         Card();
 
-        Card(SUIT s, RANK rank);
+        Card(SUIT suit, RANK rank);
 
-        Card(SUIT s, int rank);
+        Card(SUIT suit, int rank);
 
         SUIT getSuit();
 
         int getRank();
 
-        void setCard(SUIT s, RANK rank);
+        void setCard(SUIT suit, RANK rank);
 
-        void setCard(SUIT s, int rank);
+        void setCard(SUIT suit, int rank);
 
         string toString();
+
+        /**
+         * @param c A Card instance.
+         * @return True if the cards are equal.
+         */
+        bool equal(Card c);
 
     };
 }
