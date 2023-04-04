@@ -4,7 +4,15 @@
 
 namespace ariel {
 
-    void Deck::push(ariel::Card _card) { this->vec.push_back(_card); }
+    bool Deck::push(ariel::Card _card) {
+        if (!cardExists(_card)) {
+            this->vec.push_back(_card);
+            return true;
+        } else {
+            cout << "The Card " + _card.toString() + " already exists!\n";
+            return false;
+        }
+    }
 
     void Deck::init() {
         if (!this->vec.empty()) {
@@ -49,4 +57,13 @@ namespace ariel {
     }
 
     bool Deck::empty() { return this->vec.empty(); }
+
+    bool Deck::cardExists(ariel::Card c) {
+        for (auto &card: this->vec) {
+            if (card.equal(c)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

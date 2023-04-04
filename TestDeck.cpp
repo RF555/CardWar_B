@@ -132,3 +132,22 @@ TEST_CASE("Check pop") {
     d.pop();
     CHECK(d.size() == 46);
 }
+
+TEST_CASE("Check no duplicates") {
+    Deck d;
+    Card c1(SPADE, ACE);
+    Card c2(DIAMOND, 1);
+    Card c3(CLUB, 2);
+    Card c4(SPADE, ACE);
+    Card c5(DIAMOND, ACE);
+    Card c6(CLUB, TWO);
+    CHECK(d.push(c1));
+    CHECK(d.push(c2));
+    CHECK(d.push(c3));
+    CHECK(d.size() == 3);
+    CHECK_FALSE(d.push(c4));
+    CHECK_FALSE(d.push(c5));
+    CHECK_FALSE(d.push(c6));
+    CHECK(d.size() == 3);
+}
+
