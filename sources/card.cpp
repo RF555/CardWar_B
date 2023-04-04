@@ -74,7 +74,7 @@ namespace ariel {
     }
 
     string Card::rankString() {
-        switch (this->_rank()) {
+        switch (this->_rank) {
             case ACE:
                 return "Ace";
             case TWO:
