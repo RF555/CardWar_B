@@ -26,6 +26,9 @@ test_card: TestRunner.o TestCard.o  $(OBJECTS)
 test_deck: TestRunner.o TestDeck.o  $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
+test_player: TestRunner.o TestPlayer.o  $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
 tidy:
 	clang-tidy $(HEADERS) $(TIDY_FLAGS) --
 
