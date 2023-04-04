@@ -15,36 +15,36 @@ namespace ariel {
 
         Deck() {}
 
-/**
- * @brief Initiate a full deck of cards.
- */
+        /**
+         * @brief Initiate a full deck of cards.
+         */
         void init();
 
-/**
-* @brief Shuffle the deck using std::shuffle.
-*/
+        /**
+        * @brief Shuffle the deck using std::shuffle.
+        */
         void shuffle();
 
-/**
- * @brief Add a new Card to the Deck.
- */
+        /**
+         * @brief Add a new Card to the Deck.
+         */
         void push(Card _card);
 
-/**
- * @return Pop and return the first card.
- */
+        /**
+         * @return Pop and return the first card.
+         */
         Card pop();
 
-/**
- * @return The number of cards left in the deck.
- */
+        /**
+         * @return The number of cards left in the deck.
+         */
         int size();
 
         string toString();
 
-/**
- * @return True if deck is empty.
- */
+        /**
+         * @return True if deck is empty.
+         */
         bool empty();
 
     };
