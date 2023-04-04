@@ -9,30 +9,46 @@ namespace ariel {
 
     class Player {
     public:
-        string name;
-        Deck cards_won;
-        Deck *game_deck;
 
         Player();
 
         Player(string _name);
 
-/**
- * Point game_deck to the actual game's deck.
- * @param _deck Pointer of the game's deck.
- */
-        void setGameDeck(Deck *_deck);
+        /**
+         * @return The name of the player.
+         */
+        string getName();
 
-/**
- * @return The amount of cards left to play.
-*/
+        /**
+         * @return A reference to the player's won cards pile.
+         */
+        Deck &getCardsWon();
+
+        /**
+         * @return A reference to the player's playing deck.
+         */
+        Deck &getMyDeck();
+
+        /**
+         * @return The amount of cards left to play.
+        */
         int stacksize();
 
-/**
- * @return The amount of cards this player has won.
- */
+        /**
+         * @return The amount of cards this player has won.
+         */
         int cardesTaken();
 
+        /**
+         * Add the won cards to the players pile.
+         * @param round_cards
+         */
+        void addWonCards(Deck &round_cards);
+
+    private:
+        string name;
+        Deck cards_won;
+        Deck my_deck;
     };
 }
 #endif

@@ -2,14 +2,23 @@
 
 namespace ariel {
 
-    Player::Player() { this->name = "NoName"; }
+    Player::Player() : name("NoName"), cards_won(Deck()), my_deck(Deck()) {}
 
-    Player::Player(string _name) { this->name = _name; }
+    Player::Player(string _name) : name(_name), cards_won(Deck()) {}
 
-    int Player::stacksize() { return this->game_deck->size(); }
+    Deck &Player::getMyDeck() { return this->my_deck; }
+
+    int Player::stacksize() { return this->my_deck.size(); }
 
     int Player::cardesTaken() { return this->cards_won.size(); }
 
-    void Player::setGameDeck(Deck *_deck) { this->game_deck = _deck; }
+    void Player::addWonCards(Deck &round_cards) {
+        for (auto &card: round_cards.vec) {
+            this->cards_won.push(card);
+        }
+    }
 
+    string Player::getName() { return this->name; }
+
+    Deck &Player::getCardsWon() { return this->cards_won; }
 }
