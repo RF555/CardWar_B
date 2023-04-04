@@ -1,3 +1,6 @@
+#ifndef DECK_HPP
+#define DECK_HPP
+
 #include <iostream>
 #include <vector>
 #include "card.hpp"
@@ -41,3 +44,4 @@ namespace ariel {
 
     };
 }
+#endif
