@@ -8,6 +8,10 @@ using namespace std;
 namespace ariel {
 
     class Player {
+        string name;
+        Deck cards_won;
+        Deck my_deck;
+
     public:
 
         Player();
@@ -47,10 +51,6 @@ namespace ariel {
 
         bool pushMyDeck(Card &c);
 
-    private:
-        string name;
-        Deck cards_won;
-        Deck my_deck;
     };
 }
 #endif
