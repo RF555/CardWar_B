@@ -7,9 +7,9 @@ using namespace ariel;
 
 TEST_CASE("Deck initiated correctly") {
     Deck d;
-    CHECK(d.empty());
+    CHECK(d.isEmpty());
     d.init();
-    CHECK(!d.empty());
+    CHECK(!d.isEmpty());
     CHECK(d.size() == 52);
 }
 
