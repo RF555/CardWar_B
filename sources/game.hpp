@@ -11,6 +11,10 @@ namespace ariel {
 
         Player p1, p2;
         Deck game_deck;
+        int turns;
+        int draws;
+        vector <string> log;
+        string lastWinner;
 
     public:
 
@@ -18,11 +22,13 @@ namespace ariel {
 
         /**
         * @brief Simulate a turn in the game.
+         * @throw Exception if game already ended.
         */
         void playTurn();
 
         /**
         * @brief Print the last turn stats.
+         * @throw Exception if game didnt start yet.
         */
         void printLastTurn();
 
@@ -33,32 +39,36 @@ namespace ariel {
 
         /**
         * @brief Print the name of the winning player.
+        * @throw Exception if there is no winner yet.
         */
         void printWiner();
 
         /**
         * @brief Print all the turns played one line per turn
         * (same format as game.printLastTurn()).
+        * @throw Exception if game didnt start yet.
         */
         void printLog();
 
         /**
         * @brief For each player prints basic statistics: win rate, cards won, <other stats you want to print>. Also print the draw rate and amount of draws that happand.
         * (draw within a draw counts as 2 draws. ).
+        * @throw Exception if game didnt start yet.
         */
         void printStats();
 
+        /**
+         * @return The size of 'game_deck'.
+         */
+        int deckSize();
+
     private:
 
-        /**
-         * @return A card from p1's deck.
-         */
-        Card popP1();
+        void cardDraw();
 
-        /**
-         * @return A card from p2's deck.
-         */
-        Card popP2();
+        void determineWinner();
+
+        string roundToString();
 
     };
 }

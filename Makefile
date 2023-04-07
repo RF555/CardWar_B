@@ -32,7 +32,7 @@ test_player: TestRunner.o TestPlayer.o  $(OBJECTS)
 test_game: TestRunner.o TestGame.o  $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-test_a: TestRunner.o CardWar_a_Test.o  $(OBJECTS)
+test_a: TestRunner.o Test_CardWar_a.o  $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 tidy:
