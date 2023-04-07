@@ -67,7 +67,7 @@ namespace ariel {
         return false;
     }
 
-    Card Deck::peek() {
+    Card &Deck::peek() {
         return this->vec.back();
     }
 }

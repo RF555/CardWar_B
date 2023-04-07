@@ -54,7 +54,7 @@ namespace ariel {
          */
         bool isEmpty();
 
-        Card peek();
+        Card &peek();
 
     };
 }
