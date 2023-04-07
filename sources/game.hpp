@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include "../sources/player.hpp"
-#include "../sources/round.hpp"
 
 namespace ariel {
 
@@ -12,7 +11,6 @@ namespace ariel {
 
         Player p1, p2;
         Deck game_deck;
-        vector <string> rounds;
 
     public:
 

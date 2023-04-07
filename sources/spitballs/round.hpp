@@ -1,7 +1,7 @@
 #ifndef ROUND_HPP
 #define ROUND_HPP
 
-#include "../sources/player.hpp"
+#include "../player.hpp"
 
 namespace ariel {
 
