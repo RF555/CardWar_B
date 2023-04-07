@@ -32,6 +32,9 @@ test_player: TestRunner.o TestPlayer.o  $(OBJECTS)
 test_game: TestRunner.o TestGame.o  $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
+test_a: TestRunner.o CardWar_a_Test.o  $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
 tidy:
 	clang-tidy $(HEADERS) $(TIDY_FLAGS) --
 
