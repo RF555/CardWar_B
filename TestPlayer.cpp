@@ -26,6 +26,6 @@ TEST_CASE("Check addWonCards & cardesTaken") {
         d.pop();
     }
     CHECK(d.size() == 38);
-    p1.addWonCards(d);
+    CHECK(p1.addWonCards(d));
     CHECK(p1.cardesTaken() == 38);
 }
