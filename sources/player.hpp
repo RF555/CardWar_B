@@ -15,6 +15,8 @@ namespace ariel {
         Deck *my_deck;
         /** Player's pit pile contains the cards drawn this round. */
         Deck *my_pit;
+        /** Number of rounds won by the player. */
+        int wins;
 
     public:
 
@@ -52,13 +54,31 @@ namespace ariel {
          * @param round_cards
          * @return True if all cards added successfully.
          */
-        bool addWonCards(Deck &round_cards);
+        bool addWonCards(Deck &opponents_pit);
+
+        bool wonRound(Deck &opponents_pit);
 
         /**
          * @param c Card added to the players deck.
          * @return True if added successfully.
          */
         bool pushMyDeck(Card c);
+
+        /**
+         * Takes a card out of the player's deck and adds it to its pit pile.
+         * @return True if added successfully to the pit pile.
+         */
+        bool drawCard();
+
+        /**
+         * @return A reference of the last card added to the pit.
+         */
+        Card &flippedCard();
+
+        /**
+         * @return A reference to the player's pit pile.
+         */
+        Deck &getMyPit();
 
 
     };
