@@ -9,8 +9,12 @@ namespace ariel {
 
     class Player {
         string name;
+        /** Cards the player has won. */
         Deck *cards_won;
+        /** Player's playing deck. */
         Deck *my_deck;
+        /** Player's pit pile contains the cards drawn this round. */
+        Deck *my_pit;
 
     public:
 
@@ -46,10 +50,16 @@ namespace ariel {
         /**
          * Add the won cards to the players pile.
          * @param round_cards
+         * @return True if all cards added successfully.
          */
-        void addWonCards(Deck &round_cards);
+        bool addWonCards(Deck &round_cards);
 
+        /**
+         * @param c Card added to the players deck.
+         * @return True if added successfully.
+         */
         bool pushMyDeck(Card c);
+
 
     };
 }
