@@ -2,17 +2,9 @@
 
 namespace ariel {
 
-//    Player::Player() : name("NoName"), cards_won(new Deck()), my_deck(new Deck()) {}
-    Player::Player() : name("NoName") {
-        this->cards_won = new Deck();
-        this->my_deck = new Deck();
-    }
+    Player::Player() : name("NoName"), cards_won(new Deck()), my_deck(new Deck()) {}
 
-//    Player::Player(string _name) : name(_name), cards_won(Deck()) {}
-    Player::Player(string _name) : name(_name) {
-        this->cards_won = new Deck();
-        this->my_deck = new Deck();
-    }
+    Player::Player(string _name) : name(_name), cards_won(new Deck()), my_deck(new Deck()) {}
 
     Deck &Player::getMyDeck() { return *this->my_deck; }
 
