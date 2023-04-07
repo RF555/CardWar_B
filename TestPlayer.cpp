@@ -9,12 +9,12 @@ TEST_CASE("Player initiated correctly") {
     Player p1;
     CHECK(p1.getName() == "NoName");
     CHECK(p1.cardesTaken() == 0);
-    CHECK(p1.getCardsWon().empty());
+    CHECK(p1.getCardsWon().isEmpty());
     CHECK(p1.stacksize() == 0);
     Player p2("Roey");
     CHECK(p2.getName() == "Roey");
     CHECK(p2.cardesTaken() == 0);
-    CHECK(p2.getCardsWon().empty());
+    CHECK(p2.getCardsWon().isEmpty());
     CHECK(p2.stacksize() == 0);
 }
 

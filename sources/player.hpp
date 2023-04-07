@@ -9,8 +9,8 @@ namespace ariel {
 
     class Player {
         string name;
-        Deck cards_won;
-        Deck my_deck;
+        Deck *cards_won;
+        Deck *my_deck;
 
     public:
 
@@ -49,7 +49,7 @@ namespace ariel {
          */
         void addWonCards(Deck &round_cards);
 
-        bool pushMyDeck(Card &c);
+        bool pushMyDeck(Card c);
 
     };
 }
