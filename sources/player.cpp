@@ -63,4 +63,14 @@ namespace ariel {
 
     Deck &Player::getMyPit() { return *this->my_pit; }
 
+    string Player::getMyStats(int turns_played) {
+        string win_rate = to_string(this->wins / turns_played);
+        string turns_lost = to_string(turns_played - this->wins);
+        return this->getName() + "'s stats:\n" +
+               "\t\tWin rate: " + win_rate + ".\n" +
+               "\t\tCards won: " + to_string(this->cardesTaken()) + ".\n" +
+               "\t\tTurns won: " + to_string(this->wins) + ".\n" +
+               "\t\tTurns won: " + turns_lost + ".\n";
+    }
+
 }

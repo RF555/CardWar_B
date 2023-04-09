@@ -14,8 +14,8 @@ namespace ariel {
         }
     }
 
-    Game::Game(Player &_p1, Player &_p2, Deck _deck) : p1(_p1), p2(_p2), game_deck(_deck),
-                                                       turns(0), draws(0), game_over(false) {
+    Game::Game(Player &_p1, Player &_p2, Deck &_deck) : p1(_p1), p2(_p2), game_deck(_deck),
+                                                        turns(0), draws(0), game_over(false) {
         while (!this->game_deck.isEmpty()) {
             this->p1.pushMyDeck(this->game_deck.pop());
             this->p2.pushMyDeck(this->game_deck.pop());
@@ -123,24 +123,46 @@ namespace ariel {
     void Game::printLastTurn() {}
 
     void Game::playAll() {
-        cout << "playAll:\n";
         while (!this->game_over) {
             this->playTurn();
         }
     }
 
-    void Game::printWiner() {}
+    void Game::printWiner() {
+        if (!this->game_over) {
+            throw "Game not over yet!\n";
+        }
+        if (this->p1.cardesTaken() > this->p2.cardesTaken()) {
+            cout << this->p1.getName() + "\n";
+        } else if (this->p1.cardesTaken() < this->p2.cardesTaken()) {
+            cout << this->p2.getName() + "\n";
+        } else {
+            cout << "It's a tie!\n";
+        }
+    }
 
     void Game::printLog() {
-        cout << "log:\n";
+//        cout << "log:\n";
+        int i = 0;
         for (auto &turn: this->log) {
-            cout << turn + "\n";
+            cout << to_string(++i) + ": " + turn + "\n";
         }
     }
 
     int Game::drawAmount() { return this->draws; }
 
-    void Game::printStats() {}
+    int Game::turnsPlayed() { return this->turns; }
+
+    void Game::printStats() {
+        string draw_rate = to_string(this->draws / this->turns);
+        cout << "Game stats:\n" +
+                "\t\tTurns played: " + to_string(this->turns) + ".\n" +
+                "\t\tDraw rate: " + draw_rate + ".\n" +
+                "\t\tTotal draws: " + to_string(this->draws) + ".\n";
+        cout << this->p1.getMyStats(this->turns);
+        cout << this->p2.getMyStats(this->turns);
+
+    }
 
     int Game::deckSize() { return this->game_deck.size(); }
 }

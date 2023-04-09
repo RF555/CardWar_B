@@ -66,6 +66,7 @@ namespace ariel {
         int deckSize();
 
         int drawAmount();
+        int turnsPlayed();
 
     private:
 

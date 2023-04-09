@@ -34,6 +34,7 @@ TEST_CASE("Game finished correctly") {
     game.playAll();
     game.printLog();
     cout << to_string(game.drawAmount()) + "\n";
+    cout << to_string(game.turnsPlayed()) + "\n";
     cout << "\nAfter:\n";
     cout << "p1.stacksize() = " + to_string(p1.stacksize()) + "\n";
     cout << "p2.stacksize() = " + to_string(p2.stacksize()) + "\n";

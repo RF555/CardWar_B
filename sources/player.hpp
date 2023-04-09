@@ -80,6 +80,8 @@ namespace ariel {
          */
         Deck &getMyPit();
 
+        string getMyStats(int turns_played);
+
 
     };
 }
