@@ -47,7 +47,8 @@ namespace ariel {
     }
 
     void Deck::shuffle() {
-        auto rng = std::default_random_engine{};
+        auto rd = std::random_device {};
+        auto rng = std::default_random_engine{rd()};
         std::shuffle(begin(this->vec), end(this->vec), rng);
     }
 
