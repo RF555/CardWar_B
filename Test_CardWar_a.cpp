@@ -28,16 +28,16 @@ TEST_CASE("Game finished correctly") {
     Player p1("Alice");
     Player p2("Bob");
     Game game(p1, p2);
-    cout << "Before:\n";
-    cout << "p1.stacksize() = " + to_string(p1.stacksize()) + "\n";
-    cout << "p2.stacksize() = " + to_string(p2.stacksize()) + "\n\n";
+//    cout << "Before:\n";
+//    cout << "p1.stacksize() = " + to_string(p1.stacksize()) + "\n";
+//    cout << "p2.stacksize() = " + to_string(p2.stacksize()) + "\n\n";
     game.playAll();
-    game.printLog();
-    cout << to_string(game.drawAmount()) + "\n";
-    cout << to_string(game.turnsPlayed()) + "\n";
-    cout << "\nAfter:\n";
-    cout << "p1.stacksize() = " + to_string(p1.stacksize()) + "\n";
-    cout << "p2.stacksize() = " + to_string(p2.stacksize()) + "\n";
+//    game.printLog();
+//    cout << to_string(game.drawAmount()) + "\n";
+//    cout << to_string(game.turnsPlayed()) + "\n";
+//    cout << "\nAfter:\n";
+//    cout << "p1.stacksize() = " + to_string(p1.stacksize()) + "\n";
+//    cout << "p2.stacksize() = " + to_string(p2.stacksize()) + "\n";
     CHECK(p1.stacksize() == 0);
     CHECK(p2.stacksize() == 0);
     CHECK(p1.cardesTaken() + p2.cardesTaken() == 52);
@@ -70,4 +70,82 @@ TEST_CASE("Game play") {
         CHECK(p1.cardesTaken() >= p1_wi);
         CHECK(p2.cardesTaken() >= p2_wi);
     }
+}
+
+TEST_CASE("Specific game play") {
+    Deck deck;
+    CHECK(deck.isEmpty());
+
+
+
+    deck.push(Card(HEART, ACE));
+    deck.push(Card(SPADE, 2));
+    deck.push(Card(HEART, 2));
+    deck.push(Card(CLUB, 2));
+    deck.push(Card(HEART, 10));
+    deck.push(Card(DIAMOND, 9));
+    deck.push(Card(HEART, QUEEN));
+    deck.push(Card(SPADE, 10));
+    deck.push(Card(SPADE, KING));
+    deck.push(Card(CLUB, QUEEN));
+    deck.push(Card(CLUB, 7));
+    deck.push(Card(DIAMOND, 7));
+    deck.push(Card(SPADE, 6));
+    deck.push(Card(HEART, 6));
+    deck.push(Card(CLUB, 5));
+    deck.push(Card(DIAMOND, 5));
+    deck.push(Card(HEART, 3));
+    deck.push(Card(SPADE, 5));
+    deck.push(Card(HEART, JACK));
+    deck.push(Card(DIAMOND, 10));
+    deck.push(Card(SPADE, 8));
+    deck.push(Card(SPADE, JACK));
+    deck.push(Card(HEART, 5));
+    deck.push(Card(DIAMOND, 6));
+    deck.push(Card(DIAMOND, 2));
+    deck.push(Card(SPADE, ACE));
+    deck.push(Card(DIAMOND, ACE));
+    deck.push(Card(DIAMOND, KING));
+    deck.push(Card(CLUB, KING));
+    deck.push(Card(CLUB, ACE));
+    deck.push(Card(HEART, KING));
+    deck.push(Card(DIAMOND, 3));
+    deck.push(Card(SPADE, 3));
+    deck.push(Card(CLUB, 4));
+    deck.push(Card(HEART, 4));
+    deck.push(Card(HEART, 7));
+    deck.push(Card(DIAMOND, 8));
+    deck.push(Card(HEART, 8));
+    deck.push(Card(HEART, 9));
+    deck.push(Card(SPADE, 9));
+    deck.push(Card(SPADE, 4));
+    deck.push(Card(DIAMOND, 4));
+    deck.push(Card(DIAMOND, QUEEN));
+    deck.push(Card(SPADE, QUEEN));
+    deck.push(Card(SPADE, 7));
+    deck.push(Card(DIAMOND, JACK));
+    deck.push(Card(CLUB, JACK));
+    deck.push(Card(CLUB, 9));
+    deck.push(Card(CLUB, 3));
+    deck.push(Card(CLUB, 6));
+    deck.push(Card(CLUB, 10));
+    deck.push(Card(CLUB, 8));
+
+
+
+
+
+
+    CHECK(deck.size() == 52);
+    Player p1("P1");
+    Player p2("P2");
+    Game game(p1, p2, deck);
+    CHECK(p1.stacksize() == 26);
+    CHECK(p2.stacksize() == 26);
+    CHECK(p1.cardesTaken() == 0);
+    CHECK(p2.cardesTaken() == 0);
+    game.playAll();
+    game.printLog();
+    game.printStats();
+
 }

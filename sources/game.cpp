@@ -75,6 +75,7 @@ namespace ariel {
         while (this->p1.flippedCard().getRank() == this->p2.flippedCard().getRank()) {
             ++this->draws;
             this->log.back() = this->log.back() + " Draw. ";
+            this->log.back() = this->log.back() + this->roundToString();
             if (this->p1.stacksize() == 0 || this->p2.stacksize() == 0) {
                 throw "Not enough cards to continue!\n";
             }
@@ -155,11 +156,12 @@ namespace ariel {
     int Game::turnsPlayed() { return this->turns; }
 
     void Game::printStats() {
-        string draw_rate = to_string(this->draws / this->turns);
-        string gam_stats = "Game stats:\n"
-                           "\t\tTurns played: " + to_string(this->turns) + ".\n" +
-                           "\t\tDraw rate: " + draw_rate + ".\n" +
-                           "\t\tTotal draws: " + to_string(this->draws) + ".\n";
+        double draw_rate = static_cast<double>(this->draws) / this->turns;
+        string game_stats = "Game stats:\n"
+                            "\tTurns played: " + to_string(this->turns) + ".\n" +
+                            "\tDraw rate: " + to_string(draw_rate) + ".\n" +
+                            "\tTotal draws: " + to_string(this->draws) + ".\n";
+        cout << game_stats;
         cout << this->p1.getMyStats(this->turns);
         cout << this->p2.getMyStats(this->turns);
 
