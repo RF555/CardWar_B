@@ -11,6 +11,11 @@ TEST_CASE("Deck initiated correctly") {
     d.init();
     CHECK(!d.isEmpty());
     CHECK(d.size() == 52);
+    for (auto &card: d.vec) {
+        CHECK(card.getRank() != -1);
+        CHECK(card.getSuit() != SUIT_UNDEFINED);
+    }
+
 }
 
 TEST_CASE("Check each SUIT has 13 cards") {
