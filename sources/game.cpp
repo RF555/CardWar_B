@@ -146,6 +146,7 @@ namespace ariel {
         int i = 0;
         for (auto &turn: this->log) {
             cout << to_string(++i) + ": " + turn + "\n";
+//            cout << turn + "\n";
         }
     }
 
