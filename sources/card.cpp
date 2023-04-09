@@ -64,52 +64,52 @@ namespace ariel {
     }
 
     string Card::suitString() {
-        switch (this->getSuit()) {
-            case HEART:
-                return "Hearts";
-            case DIAMOND:
-                return "Diamonds";
-            case CLUB:
-                return "Clubs";
-            case SPADE:
-                return "Spades";
-            case SUIT_UNDEFINED:
-                return "SUIT_UNDEFINED";
-        }
+        if (this->_suit == HEART)
+            return "Hearts";
+        else if (this->_suit == DIAMOND)
+            return "Diamonds";
+        else if (this->_suit == CLUB)
+            return "Clubs";
+        else if (this->_suit == SPADE)
+            return "Spades";
+        else
+            return "SUIT_UNDEFINED";
     }
 
+
     string Card::rankString() {
-        switch (this->_rank) {
-            case ACE:
-                return "Ace";
-            case TWO:
-                return "2";
-            case THREE:
-                return "3";
-            case FOUR:
-                return "4";
-            case FIVE:
-                return "5";
-            case SIX:
-                return "6";
-            case SEVEN:
-                return "7";
-            case EIGHT:
-                return "8";
-            case NINE:
-                return "9";
-            case TEN:
-                return "10";
-            case JACK:
-                return "Jack";
-            case QUEEN:
-                return "Queen";
-            case KING:
-                return "King";
-            case RANK_UNDEFINED:
-                return "RANK_UNDEFINED";
-        }
+        if (this->_rank == ACE)
+            return "Ace";
+        else if (this->_rank == TWO)
+            return "2";
+        else if (this->_rank == THREE)
+            return "3";
+        else if (this->_rank == FOUR)
+            return "4";
+        else if (this->_rank == FIVE)
+            return "5";
+        else if (this->_rank == SIX)
+            return "6";
+        else if (this->_rank == SEVEN)
+            return "7";
+        else if (this->_rank == EIGHT)
+            return "8";
+        else if (this->_rank == NINE)
+            return "9";
+        else if (this->_rank == TEN)
+            return "10";
+        else if (this->_rank == JACK)
+            return "Jack";
+        else if (this->_rank == QUEEN)
+            return "Queen";
+        else if (this->_rank == KING)
+            return "King";
+        else
+            return to_string(this->_rank);
+//            return "RANK_UNDEFINED";
+
     }
+
 
     string Card::toString() {
         return rankString() + " of " + suitString();
