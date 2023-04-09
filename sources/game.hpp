@@ -9,16 +9,19 @@ namespace ariel {
 
     class Game {
 
-        Player p1, p2;
+        Player &p1, &p2;
         Deck game_deck;
         int turns;
         int draws;
         vector <string> log;
         string lastWinner;
+        bool game_over;
 
     public:
 
-        Game(Player _p1, Player _p2);
+        Game(Player &_p1, Player &_p2);
+
+        Game(Player &_p1, Player &_p2, Deck &_deck);
 
         /**
         * @brief Simulate a turn in the game.
@@ -27,7 +30,7 @@ namespace ariel {
         void playTurn();
 
         /**
-        * @brief Print the last turn stats.
+        * @brief Prints the last turn stats.
          * @throw Exception if game didnt start yet.
         */
         void printLastTurn();
@@ -38,13 +41,13 @@ namespace ariel {
         void playAll();
 
         /**
-        * @brief Print the name of the winning player.
+        * @brief Prints the name of the winning player.
         * @throw Exception if there is no winner yet.
         */
         void printWiner();
 
         /**
-        * @brief Print all the turns played one line per turn
+        * @brief Prints all the turns played one line per turn
         * (same format as game.printLastTurn()).
         * @throw Exception if game didnt start yet.
         */
@@ -61,6 +64,8 @@ namespace ariel {
          * @return The size of 'game_deck'.
          */
         int deckSize();
+
+        int drawAmount();
 
     private:
 

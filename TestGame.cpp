@@ -12,4 +12,5 @@ TEST_CASE("Game initiated correctly") {
     CHECK(p1.stacksize() == 26);
     CHECK(p2.stacksize() == 26);
     CHECK(game.deckSize() == 0);
+    game.playAll();
 }
