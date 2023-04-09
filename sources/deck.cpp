@@ -10,14 +10,8 @@ namespace ariel {
         }
         for (int i = 0; i < 13; ++i) {
             this->push(Card(HEART, i + 1));
-        }
-        for (int i = 0; i < 13; ++i) {
             this->push(Card(DIAMOND, i + 1));
-        }
-        for (int i = 0; i < 13; ++i) {
             this->push(Card(SPADE, i + 1));
-        }
-        for (int i = 0; i < 13; ++i) {
             this->push(Card(CLUB, i + 1));
         }
     }
