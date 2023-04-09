@@ -155,10 +155,10 @@ namespace ariel {
 
     void Game::printStats() {
         string draw_rate = to_string(this->draws / this->turns);
-        cout << "Game stats:\n" +
-                "\t\tTurns played: " + to_string(this->turns) + ".\n" +
-                "\t\tDraw rate: " + draw_rate + ".\n" +
-                "\t\tTotal draws: " + to_string(this->draws) + ".\n";
+        string gam_stats = "Game stats:\n"
+                           "\t\tTurns played: " + to_string(this->turns) + ".\n" +
+                           "\t\tDraw rate: " + draw_rate + ".\n" +
+                           "\t\tTotal draws: " + to_string(this->draws) + ".\n";
         cout << this->p1.getMyStats(this->turns);
         cout << this->p2.getMyStats(this->turns);
 
