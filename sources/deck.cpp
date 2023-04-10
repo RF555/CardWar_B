@@ -54,9 +54,9 @@ namespace ariel {
 
     bool Deck::isEmpty() { return this->vec.empty(); }
 
-    bool Deck::cardExists(Card c) {
+    bool Deck::cardExists(Card _card) {
         for (auto &card: this->vec) {
-            if (card.equal(c)) {
+            if (card.equal(_card)) {
                 return true;
             }
         }

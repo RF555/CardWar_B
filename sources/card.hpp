@@ -50,10 +50,10 @@ namespace ariel {
         string toStringCol();
 
         /**
-         * @param c A Card instance.
+         * @param _card A Card instance.
          * @return True if the cards are equal.
          */
-        bool equal(Card c);
+        bool equal(Card _card);
 
         Card copy();
 

@@ -40,8 +40,8 @@ namespace ariel {
         }
     }
 
-    bool Card::equal(Card c) {
-        return (this->_rank == c.getRank()) && (this->_suit == c.getSuit());
+    bool Card::equal(Card _card) {
+        return (this->_rank == _card.getRank()) && (this->_suit == _card.getSuit());
     }
 
     Card Card::copy() {

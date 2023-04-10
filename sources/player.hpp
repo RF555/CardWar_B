@@ -59,10 +59,10 @@ namespace ariel {
         bool wonRound(Deck &opponents_pit);
 
         /**
-         * @param c Card added to the players deck.
+         * @param _card Card added to the players deck.
          * @return True if added successfully.
          */
-        bool pushMyDeck(Card c);
+        bool pushMyDeck(Card _card);
 
         /**
          * Takes a card out of the player's deck and adds it to its pit pile.

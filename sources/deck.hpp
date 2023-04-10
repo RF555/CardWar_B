@@ -11,10 +11,10 @@ namespace ariel {
     class Deck {
 
         /**
-         * @param c A Card instance .
+         * @param _card A Card instance .
          * @return True if the card already exists in the deck.
          */
-        bool cardExists(Card c);
+        bool cardExists(Card _card);
 
     public:
         vector <Card> vec;
