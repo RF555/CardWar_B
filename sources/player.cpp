@@ -26,13 +26,16 @@ namespace ariel {
 
     bool Player::addWonCards(Deck &opponents_pit) {
         int prev_won = this->cardesTaken();
-        int my_pit = this->my_pit->size();
-        int opp_pit = opponents_pit.size();
-        for (auto &card: opponents_pit.vec) {
-            this->cards_won->push(card);
-        }
-        while (!opponents_pit.isEmpty()) {
-            opponents_pit.pop();
+        int my_pit_size = this->my_pit->size();
+        int opp_pit = 0;
+        if (this->my_pit != &opponents_pit) {
+            opp_pit = opponents_pit.size();
+            for (auto &card: opponents_pit.vec) {
+                this->cards_won->push(card);
+            }
+            while (!opponents_pit.isEmpty()) {
+                opponents_pit.pop();
+            }
         }
         for (auto &card: this->my_pit->vec) {
             this->cards_won->push(card);
@@ -40,12 +43,12 @@ namespace ariel {
         while (!this->my_pit->isEmpty()) {
             this->my_pit->pop();
         }
-        return (this->cardesTaken() == prev_won + opp_pit + my_pit)
+        return (this->cardesTaken() == prev_won + opp_pit + my_pit_size)
                && opponents_pit.isEmpty()
                && this->my_pit->isEmpty();
     }
 
-    bool Player::wonRound(ariel::Deck &opponents_pit) {
+    bool Player::wonRound(Deck &opponents_pit) {
         ++this->wins;
         return this->addWonCards(opponents_pit);
 

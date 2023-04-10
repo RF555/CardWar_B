@@ -77,17 +77,20 @@ TEST_CASE("Specific game play") {
     CHECK(deck.isEmpty());
 
 
-
+    // Round
     deck.push(Card(HEART, ACE));
     deck.push(Card(SPADE, 2));
+    // Round
     deck.push(Card(HEART, 2));
     deck.push(Card(CLUB, 2));
     deck.push(Card(HEART, 10));
     deck.push(Card(DIAMOND, 9));
     deck.push(Card(HEART, QUEEN));
     deck.push(Card(SPADE, 10));
+    // Round
     deck.push(Card(SPADE, KING));
     deck.push(Card(CLUB, QUEEN));
+    // Round
     deck.push(Card(CLUB, 7));
     deck.push(Card(DIAMOND, 7));
     deck.push(Card(SPADE, 6));
@@ -96,41 +99,53 @@ TEST_CASE("Specific game play") {
     deck.push(Card(DIAMOND, 5));
     deck.push(Card(HEART, 3));
     deck.push(Card(SPADE, 5));
+    // Round
     deck.push(Card(HEART, JACK));
     deck.push(Card(DIAMOND, 10));
+    // Round
     deck.push(Card(SPADE, 8));
     deck.push(Card(SPADE, JACK));
+    // Round
     deck.push(Card(HEART, 5));
     deck.push(Card(DIAMOND, 6));
+    // Round
     deck.push(Card(DIAMOND, 2));
     deck.push(Card(SPADE, ACE));
+    // Round
     deck.push(Card(DIAMOND, ACE));
     deck.push(Card(DIAMOND, KING));
+    // Round
     deck.push(Card(CLUB, KING));
     deck.push(Card(CLUB, ACE));
+    // Round
     deck.push(Card(HEART, KING));
     deck.push(Card(DIAMOND, 3));
+    // Round
     deck.push(Card(SPADE, 3));
     deck.push(Card(CLUB, 4));
+    // Round
     deck.push(Card(HEART, 4));
     deck.push(Card(HEART, 7));
+    // Round
     deck.push(Card(DIAMOND, 8));
     deck.push(Card(HEART, 8));
+    deck.push(Card(CLUB, 10));
+    deck.push(Card(CLUB, 8));
     deck.push(Card(HEART, 9));
     deck.push(Card(SPADE, 9));
-    deck.push(Card(SPADE, 4));
-    deck.push(Card(DIAMOND, 4));
     deck.push(Card(DIAMOND, QUEEN));
     deck.push(Card(SPADE, QUEEN));
     deck.push(Card(SPADE, 7));
     deck.push(Card(DIAMOND, JACK));
+    // Round
     deck.push(Card(CLUB, JACK));
     deck.push(Card(CLUB, 9));
+    // Round
     deck.push(Card(CLUB, 3));
     deck.push(Card(CLUB, 6));
-    deck.push(Card(CLUB, 10));
-    deck.push(Card(CLUB, 8));
-
+    // Round
+    deck.push(Card(SPADE, 4));
+    deck.push(Card(DIAMOND, 4));
 
 
 
