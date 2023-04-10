@@ -20,6 +20,21 @@ demo: Demo.o $(OBJECTS)
 test1: TestRunner.o StudentTest1.o  $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
+test_card: TestRunner.o TestCard.o  $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+test_deck: TestRunner.o TestDeck.o  $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+test_player: TestRunner.o TestPlayer.o  $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+test_game: TestRunner.o TestGame.o  $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+test_a: TestRunner.o Test_CardWar_a.o  $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
 tidy:
 	clang-tidy $(HEADERS) $(TIDY_FLAGS) --
 

@@ -1,6 +1,6 @@
-#include "doctest.h"
+#include "../doctest.h"
 #include <stdexcept>
-#include "sources/game.hpp"
+#include "../sources/game.hpp"
 
 using namespace std;
 using namespace ariel;

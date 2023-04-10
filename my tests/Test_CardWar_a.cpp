@@ -1,10 +1,10 @@
-#include "doctest.h"
+#include "../doctest.h"
 
 using namespace std;
 
-#include "sources/player.hpp"
-#include "sources/game.hpp"
-#include "sources/card.hpp"
+#include "../sources/player.hpp"
+#include "../sources/game.hpp"
+#include "../sources/card.hpp"
 
 using namespace ariel;
 
