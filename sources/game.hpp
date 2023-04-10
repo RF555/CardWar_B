@@ -13,7 +13,7 @@ namespace ariel {
         Deck game_deck;
         int turns;
         int draws;
-        vector <string> log;
+        vector<string> log;
         string lastWinner;
         bool game_over;
 
@@ -25,6 +25,7 @@ namespace ariel {
 
         /**
         * @brief Simulate a turn in the game.
+         * @throw logic_error if there is only 1 player.
          * @throw Exception if game already ended.
         */
         void playTurn();
@@ -42,7 +43,6 @@ namespace ariel {
 
         /**
         * @brief Prints the name of the winning player.
-        * @throw Exception if there is no winner yet.
         */
         void printWiner();
 
@@ -66,6 +66,7 @@ namespace ariel {
         int deckSize();
 
         int drawAmount();
+
         int turnsPlayed();
 
     private:
@@ -75,6 +76,8 @@ namespace ariel {
         void determineWinner();
 
         string roundToString();
+
+        string getWinner();
 
     };
 }

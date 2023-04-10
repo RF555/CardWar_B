@@ -3,9 +3,9 @@
 namespace ariel {
 
     Game::Game(Player &_p1, Player &_p2) : p1(_p1), p2(_p2), turns(0), draws(0), game_over(false) {
-        if (_p1.getName() == _p2.getName()) {
-            throw "ERROR! Only 1 player!\n";
-        }
+//        if (_p1.getName() == _p2.getName()) {
+//            throw logic_error{"ERROR! Only 1 player!\n"};
+//        }
         this->game_deck.init();
         this->game_deck.shuffle();
         while (!this->game_deck.isEmpty()) {
@@ -29,6 +29,9 @@ namespace ariel {
     }
 
     void Game::playTurn() {
+        if ((this->p1.getName() == this->p2.getName()) || (&this->p1 == &this->p2)) {
+            throw logic_error("ERROR! Only 1 player!\n");
+        }
         if (this->game_over) {
             throw "Game has already ended!\n";
         }
@@ -137,17 +140,21 @@ namespace ariel {
         }
     }
 
-    void Game::printWiner() {
-        if (!this->game_over) {
-            throw "Game not over yet!\n";
-        }
+    string Game::getWinner() {
         if (this->p1.cardesTaken() > this->p2.cardesTaken()) {
-            cout << this->p1.getName() + "\n";
+            return this->p1.getName();
         } else if (this->p1.cardesTaken() < this->p2.cardesTaken()) {
-            cout << this->p2.getName() + "\n";
+            return this->p2.getName();
         } else {
-            cout << "It's a tie!\n";
+            return "It's a tie!";
         }
+    }
+
+    void Game::printWiner() {
+//        if (!this->game_over) {
+//            throw "Game not over yet!\n";
+//        }
+        cout << this->getWinner() + "\n";
     }
 
     void Game::printLog() {
@@ -169,6 +176,12 @@ namespace ariel {
                             "\tTurns played: " + to_string(this->turns) + ".\n" +
                             "\tDraw rate: " + to_string(draw_rate) + ".\n" +
                             "\tTotal draws: " + to_string(this->draws) + ".\n";
+        if (this->game_over) {
+            game_stats = game_stats + "\tWinner: ";
+        } else {
+            game_stats = game_stats + "\tLeading player: ";
+        }
+        game_stats = game_stats + this->getWinner() + "\n";
         cout << game_stats;
         cout << this->p1.getMyStats(this->turns);
         cout << this->p2.getMyStats(this->turns);
